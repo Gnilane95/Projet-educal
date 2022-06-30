@@ -18,7 +18,8 @@ export default function SectionSkiline() {
     ];
   return (
     <div className="px-36 py-32">
-      <div className="text-center">
+      <img src="img/yellow-bg.png" alt="" className="absolute mt-8 ml-96" />
+      <div className="text-center relative">
         <h2 className="text-[#0e1133] font-bold text-5xl">
           What is Skilline ?
         </h2>
@@ -30,15 +31,14 @@ export default function SectionSkiline() {
         </p>
       </div>
       <div className=" pt-20 grid grid-cols-2 gap-10">
-        {skill.map((skills) => 
-            <CardsSkil
-              bg={skills.bg}
-              title={skills.title}
-              btn={skills.btn}
-              key={skills.id}
-            />
-          
-        )}
+        {skill.map((skills) => (
+          <CardsSkil
+            bg={skills.bg}
+            title={skills.title}
+            btn={skills.btn}
+            key={skills.id}
+          />
+        ))}
       </div>
     </div>
   );

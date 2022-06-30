@@ -1,9 +1,10 @@
 import React from 'react'
 import { FiBook } from "react-icons/fi";
-import { WiDirectionRight } from "react-icons/wi";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function CardsOnlineCourses({
   src,
+  theme,
   p1,
   title,
   src2,
@@ -12,10 +13,16 @@ export default function CardsOnlineCourses({
   price2,
   p2,
   textcolor,
+  bg,
 }) {
   return (
-    <div className="bg-white rounded-xl mb-10">
-      <img className="rounded-t-lg" src={src} alt="home page" />
+    <div className="bg-white rounded-xl mb-10 relative">
+      <p
+        className={`${bg} w-32 text-sm text-center px-4 rounded-md text-white font-semibold absolute mt-7 ml-7 `}
+      >
+        {theme}
+      </p>
+      <img className="rounded-t-lg " src={src} alt="home page" />
       <div className="p-8">
         <p className="flex items-center gap-2">
           <FiBook />
@@ -38,10 +45,10 @@ export default function CardsOnlineCourses({
               {price2}
             </span>
           </p>
-          <span className="flex items-center text-[#2a3a57] font-bold">
-            {p2}
-            <WiDirectionRight />
-          </span>
+          <div className="flex items-center">
+            <span className=" text-[#2a3a57] font-bold pr-2">{p2}</span>
+            <FaArrowRight />
+          </div>
         </div>
       </div>
     </div>
